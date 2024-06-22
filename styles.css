@@ -1,20 +1,96 @@
+/* Estilos gerais */
 body {
     font-family: Arial, sans-serif;
+    background-color: black;
+    color: #d3d3d3;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-button {
-    background-color: #4CAF50;
-    color: white;
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    color: #ffffff;
+}
+
+form {
+    max-width: 900px;
+    width: 90%;
+    margin: 20px auto;
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.row div {
+    flex: 1;
+    margin: 0 5px;
+}
+
+input[type="text"], input[type="date"], input[type="number"], select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #add8e6;
+    color: black;
+    font-size: 16px;
+}
+
+fieldset {
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 20px;
+    background-color: #222;
+}
+
+legend {
+    padding: 0 10px;
+    color: #ffffff;
+}
+
+#resumo {
+    background-color: white;
+    color: black;
+    padding: 10px;
+    border-radius: 5px;
+    height: 150px;
+    overflow-y: auto;
+    margin-top: 10px;
+}
+
+.button-row {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 20px;
+}
+
+.button-row button {
+    margin-right: 10px;
     padding: 10px 20px;
     border: none;
     cursor: pointer;
     border-radius: 5px;
     font-size: 16px;
-    margin: 10px;
+    background: linear-gradient(to right, #555, #777);
+    color: white;
+    transition: background 0.3s ease;
 }
 
-button:hover {
-    background-color: #45a049;
+.button-row button:hover {
+    background: linear-gradient(to right, #666, #888);
 }
 
 /* Estilo para o <dialog> */
@@ -23,12 +99,13 @@ dialog {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     max-width: 600px;
-    width: 80%;
+    width: 90%;
     background: linear-gradient(to right, #f0f0f0, #dcdcdc);
     padding: 20px;
     position: relative;
     opacity: 0;
     transition: opacity 0.3s ease;
+    z-index: 1000;
 }
 
 dialog[open] {
@@ -41,7 +118,6 @@ dialog[open] {
     border-radius: 10px;
 }
 
-/* Fechar botão (x) */
 .close {
     position: absolute;
     right: 10px;
@@ -58,5 +134,55 @@ dialog[open] {
 .close:focus {
     color: black;
     text-decoration: none;
-    cursor: pointer;
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+.info p {
+    margin: 0;
+    font-size: 16px;
+    color: black;
+}
+
+h2, h3 {
+    text-align: center;
+    color: #333;
+}
+
+/* Estilos para garantir espaçamento e layout */
+.row {
+    margin-bottom: 15px;
+}
+
+.row div {
+    margin: 0 10px;
+}
+
+input[type="text"], input[type="date"], input[type="number"], select {
+    margin-top: 10px;
+}
+
+fieldset {
+    margin-bottom: 20px;
+}
+
+.button-row button {
+    margin-right: 20px;
+}
+
+.button-row {
+    justify-content: center;
+}
+
+/* Ajuste para tamanho e alinhamento */
+button, select {
+    font-size: 16px;
+}
+
+.dialog-content p {
+    font-size: 16px;
 }
