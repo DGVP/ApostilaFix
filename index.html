@@ -3,16 +3,198 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exemplo de Modal com &lt;dialog&gt;</title>
+    <title>Sistema DGVP de Cálculos</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <button id="openModalBtn">Abrir Modal</button>
+    <h1>Sistema DGVP de Cálculos</h1>
+    
+    <form id="soldoForm">
+        <!-- Primeira fileira de 3 campos -->
+        <div class="row">
+            <div>
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome">
+            </div>
+            <div>
+                <label for="rgMilitar">RG Militar:</label>
+                <input type="text" id="rgMilitar" name="rgMilitar">
+            </div>
+            <div>
+                <label for="gradPosto">Grad/Posto:</label>
+                <select id="gradPosto" name="gradPosto">
+                    <option value="">Selecione</option>
+                    <option value="Soldado BM">Soldado BM</option>
+                    <option value="Cabo BM">Cabo BM</option>
+                    <option value="3° Sargento BM">3° Sargento BM</option>
+                    <option value="2° Sargento BM">2° Sargento BM</option>
+                    <option value="1° Sargento BM">1° Sargento BM</option>
+                    <option value="Subtenente BM">Subtenente BM</option>
+                    <option value="2° Tenente BM">2° Tenente BM</option>
+                    <option value="1° Tenente BM">1° Tenente BM</option>
+                    <option value="Capitão BM">Capitão BM</option>
+                    <option value="Major BM">Major BM</option>
+                    <option value="Ten. Cel. BM">Ten. Cel. BM</option>
+                    <option value="Coronel BM">Coronel BM</option>
+                </select>
+            </div>
+        </div>
 
+        <!-- Segunda fileira de 3 campos -->
+        <div class="row">
+            <div>
+                <label for="inatividade">Inatividade:</label>
+                <select id="inatividade" name="inatividade">
+                    <option value="">Selecione</option>
+                    <option value="RESERVA REMUNERADA">RESERVA REMUNERADA</option>
+                    <option value="RESERVA REMUNERADA EX-OFFÍCIO">RESERVA REMUNERADA EX-OFFÍCIO</option>
+                    <option value="REFORMA">REFORMA</option>
+                    <option value="COMPULSÓRIA VOLUNTÁRIA">COMPULSÓRIA VOLUNTÁRIA</option>
+                    <option value="RR (LEI 9537/21)">RR (LEI 9537/21)</option>
+                </select>
+            </div>
+            <div>
+                <label for="dataInclusao">Data de Inclusão:</label>
+                <input type="date" id="dataInclusao" name="dataInclusao">
+            </div>
+            <div>
+                <label for="dataExclusao">Data de Exclusão:</label>
+                <input type="date" id="dataExclusao" name="dataExclusao">
+            </div>
+        </div>
+
+        <!-- Terceira fileira de 3 campos -->
+        <div class="row">
+            <div>
+                <label for="reforma">Reforma:</label>
+                <input type="text" id="reforma" name="reforma">
+            </div>
+            <div>
+                <label for="exOficio">Ex-Ofício:</label>
+                <input type="text" id="exOficio" name="exOficio">
+            </div>
+            <div>
+                <label for="ghp">GHP:</label>
+                <select id="ghp" name="ghp">
+                    <option value="">Selecione</option>
+                    <option value="CSC">CSC</option>
+                    <option value="Formação Sgt/Oficial">Formação Sgt/Oficial</option>
+                    <option value="CAS ou equivalente">CAS ou equivalente</option>
+                    <option value="Curso de SD/CB">Curso de SD/CB</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Averbações -->
+        <fieldset>
+            <legend>Averbações</legend>
+            <div class="row">
+                <div>
+                    <label for="anosServicoMilitar">Tempo de Serviço Militar:</label>
+                    <input type="number" id="anosServicoMilitar" placeholder="Anos">
+                    <input type="number" id="mesesServicoMilitar" placeholder="Meses">
+                    <input type="number" id="diasServicoMilitar" placeholder="Dias">
+                </div>
+                <div>
+                    <label for="anosServicoEstatutario">Tempo de Serviço Estatutário:</label>
+                    <input type="number" id="anosServicoEstatutario" placeholder="Anos">
+                    <input type="number" id="mesesServicoEstatutario" placeholder="Meses">
+                    <input type="number" id="diasServicoEstatutario" placeholder="Dias">
+                </div>
+            </div>
+            <div class="row">
+                <div>
+                    <label for="anosLicencaEspecial">Licença Especial:</label>
+                    <input type="number" id="anosLicencaEspecial" placeholder="Anos">
+                    <input type="number" id="mesesLicencaEspecial" placeholder="Meses">
+                    <input type="number" id="diasLicencaEspecial" placeholder="Dias">
+                </div>
+                <div>
+                    <label for="anosFerias">Férias:</label>
+                    <input type="number" id="anosFerias" placeholder="Anos">
+                    <input type="number" id="mesesFerias" placeholder="Meses">
+                    <input type="number" id="diasFerias" placeholder="Dias">
+                </div>
+            </div>
+            <div class="row">
+                <div>
+                    <label for="anosTsQos">T.S Q.O.S:</label>
+                    <input type="number" id="anosTsQos" placeholder="Anos">
+                    <input type="number" id="mesesTsQos" placeholder="Meses">
+                    <input type="number" id="diasTsQos" placeholder="Dias">
+                </div>
+                <div>
+                    <label for="anosInss">INSS:</label>
+                    <input type="number" id="anosInss" placeholder="Anos">
+                    <input type="number" id="mesesInss" placeholder="Meses">
+                    <input type="number" id="diasInss" placeholder="Dias">
+                </div>
+            </div>
+        </fieldset>
+
+        <!-- Resumo -->
+        <fieldset>
+            <legend>Resumo</legend>
+            <div id="resumo"></div>
+        </fieldset>
+
+        <!-- Botões -->
+        <div class="button-row">
+            <button type="button" id="gerarResumo">Gerar Resumo</button>
+            <button type="button" id="gerarApostila">Gerar Apostila</button>
+        </div>
+    </form>
+
+    <!-- Modal -->
     <dialog id="dialog-box">
         <div class="dialog-content">
             <button id="closeModalBtn" class="close">&times;</button>
-            <p>Conteúdo da modal aqui...</p>
+            <h2>Apostila de Fixação de Proventos</h2>
+            <div class="info">
+                <p>Grad/Posto:</p>
+                <p id="gradPostoModal"></p>
+            </div>
+            <div class="info">
+                <p>Nome:</p>
+                <p id="nomeModal"></p>
+            </div>
+            <div class="info">
+                <p>RG Militar:</p>
+                <p id="rgMilitarModal"></p>
+            </div>
+            <div class="info">
+                <p>Data de Inclusão:</p>
+                <p id="dataInclusaoModal"></p>
+            </div>
+            <div class="info">
+                <p>Data de Exclusão:</p>
+                <p id="dataExclusaoModal"></p>
+            </div>
+            <h3>Averbações</h3>
+            <div class="info">
+                <p>Tempo de Serviço Militar:</p>
+                <p id="tsServicoMilitarModal"></p>
+            </div>
+            <div class="info">
+                <p>Tempo de Serviço Estatutário:</p>
+                <p id="tsServicoEstatutarioModal"></p>
+            </div>
+            <div class="info">
+                <p>Licença Especial:</p>
+                <p id="licencaEspecialModal"></p>
+            </div>
+            <div class="info">
+                <p>Férias:</p>
+                <p id="feriasModal"></p>
+            </div>
+            <div class="info">
+                <p>T.S Q.O.S:</p>
+                <p id="tsQosModal"></p>
+            </div>
+            <div class="info">
+                <p>INSS:</p>
+                <p id="inssModal"></p>
+            </div>
         </div>
     </dialog>
 
